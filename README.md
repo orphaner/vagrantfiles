@@ -1,5 +1,5 @@
 # Vagrantfiles
-Répot de partage de mes fichiers Vagrantfiles.
+Dépot de partage de mes fichiers Vagrantfile.
 
 ## Plugins nécessaires
 ```sh
