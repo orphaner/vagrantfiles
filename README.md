@@ -7,7 +7,7 @@ vagrant plugin install --verbose vagrant-hostmanager
 vagrant plugin install --verbose vagrant-cachier
 ```
 
-# Utilisation
+## Utilisation
 ```sh
 git clone https://github.com/orphaner/vagrantfiles.git
 cd vagrantfiles/biroute
