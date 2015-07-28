@@ -18,6 +18,6 @@ vagrant up
 # Echange de clés ssh avec Vagrant
 ssh-copy-id deploy@biroute.org
  
-# Test de l'échange de clé (et donc que la machine vagrant fonctionne)
-ansible beroot.local -i hosts -m ping -vvvv -u deploy
+# Test de l'échange de clé
+ssh deploy@biroute.org
 ```
