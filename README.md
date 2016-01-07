@@ -21,3 +21,6 @@ ssh-copy-id deploy@biroute.org
 # Test de l'échange de clé
 ssh deploy@biroute.org
 ```
+
+## Liens utiles
+* https://vagrantcloud.com/debian
