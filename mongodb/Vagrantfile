@@ -1,0 +1,38 @@
+# coding: utf-8
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  # Configuration réseau de Vagrant
+  config.vm.hostname = "mongodb.biroute.org"
+  config.vm.network "private_network", ip: "172.16.100.4"
+
+  # Configuration avancée du réseau avec le plugin hostmanager
+  # Les fichiers hosts de l'hote et du vagrant seront mis à jour
+  config.hostmanager.enabled = true
+  config.hostmanager.manage_host = true
+  config.hostmanager.ignore_private_ip = false
+  config.hostmanager.include_offline = true
+
+  # Every Vagrant virtual environment requires a box to build off of.
+  config.vm.box = "debian/contrib-jessie64"
+  #config.vm.box = "chef/debian-7.8"
+
+  # Configuration RAM et nb de processeurs
+  config.vm.provider :virtualbox do |v|
+    v.memory = 512
+    v.cpus = 2
+  end
+
+  # Cache APT
+  if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.scope = :box
+  end
+
+  # Provisionning de base
+  config.vm.provision "shell", path: "init.sh"
+end
